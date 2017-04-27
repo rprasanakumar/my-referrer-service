@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<typeAliases>
+		<typeAlias alias="ReferrerURL" type="org.service.referrer.model.ReferrerURL"/>
+	</typeAliases>
+	
+	<environments default="development">
+		<environment id="development">
+		  <transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://google/referrer_service?cloudSqlInstance=my-referrer-service-165704:us-central1:my-referrer-service&amp;socketFactory=com.google.cloud.sql.mysql.SocketFactory"/>
+				<property name="username" value="root"/>
+				<property name="password" value="Nov_1987"/>
+			</dataSource>
+	   </environment>
+	</environments>
+	
+    <mappers>
+  	   <mapper resource="org/service/referrer/data/ReferrerURL.xml"/>
+    </mappers>
+
+</configuration>

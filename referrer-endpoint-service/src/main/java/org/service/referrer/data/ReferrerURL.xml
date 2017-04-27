@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ReferrerURL">
+	
+	<resultMap id="result" type="ReferrerURL">
+	    <result property="domain" column="url_domain"/>
+	    <result property="id" column="url_id"/>
+	    <result property="hitCount" column="url_hit_count"/>
+    </resultMap>
+
+	 <insert id="insert" parameterType="ReferrerURL">
+	INSERT INTO REFERRERURL (url_id,url_domain) OUTPUT Inserted.url_id VALUES (#{id},#{domain})
+ON DUPLICATE KEY UPDATE `url_hit_count` = `url_hit_count` + 1;
+	</insert>
+
+</mapper>
+
