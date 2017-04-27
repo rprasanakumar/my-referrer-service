@@ -5,7 +5,7 @@
 
     <groupId>org.service.referrer</groupId>
     <artifactId>referrer-endpoint-service</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <version>0.0.1</version>
     <name>referrer-endpoint-service</name>
 
