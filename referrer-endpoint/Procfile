@@ -1,1 +1,1 @@
-web: sh target/referrer-endpoint-0.1.0
+web: sh target/referrer-endpoint
