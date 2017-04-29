@@ -11,38 +11,7 @@
 	<name>referrer-endpoint</name>
  <build>
         <finalName>referrer-endpoint</finalName>
-        <defaultGoal>install</defaultGoal>
-     <!--    <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.5.1</version>
-                <inherited>true</inherited>
-                 
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                    <executions>
-                <execution>
-                    <phase>package</phase>
-                    <goals><goal>copy</goal></goals>
-                    <configuration>
-                        <artifactItems>
-                            <artifactItem>
-                                <groupId>org.service.referrer</groupId>
-                                <artifactId>referrer-endpoint</artifactId>
-                                <version>0.0.1</version>
-                                <destFileName>referrer-endpoint.jar</destFileName>
-                            </artifactItem>
-                        </artifactItems>
- 
-                    </configuration>
-                </execution>
-            </executions>
-                                   </configuration>
-            </plugin>
-        </plugins>  -->
-        
+        <defaultGoal>install</defaultGoal>       
         <plugins>
         <plugin>
              <groupId>org.apache.maven.plugins</groupId>
@@ -107,57 +76,7 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.39</version>
-        </dependency>
-        <!-- mysql-socket-factory-core google cloud connector -->
-   	 	<dependency>
-            <groupId>com.google.cloud.sql</groupId>
-            <artifactId>mysql-socket-factory</artifactId>
-            <version>1.0.2</version>
-        </dependency>
-        
-        
-        <!-- TOMCAT DEPENDENCIES START-->
-        
-        <dependency>
-        <groupId>org.apache.tomcat.embed</groupId>
-        <artifactId>tomcat-embed-core</artifactId>
-        <version>${tomcat.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.tomcat.embed</groupId>
-        <artifactId>tomcat-embed-logging-juli</artifactId>
-        <version>${tomcat.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.tomcat.embed</groupId>
-        <artifactId>tomcat-embed-jasper</artifactId>
-        <version>${tomcat.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.tomcat</groupId>
-        <artifactId>tomcat-jasper</artifactId>
-        <version>${tomcat.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.tomcat</groupId>
-        <artifactId>tomcat-jasper-el</artifactId>
-        <version>${tomcat.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.tomcat</groupId>
-        <artifactId>tomcat-jsp-api</artifactId>
-        <version>${tomcat.version}</version>
-    </dependency>
-        
-        
-        
-        <!-- TOMCAT DEPENDENCIES END-->
-        
-        
-        
-        
-        
-        
+        </dependency>       
     </dependencies>
     <properties>
         <jersey.version>2.16</jersey.version>
