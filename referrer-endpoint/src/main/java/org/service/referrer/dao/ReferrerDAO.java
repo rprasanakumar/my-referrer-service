@@ -39,6 +39,25 @@ public class ReferrerDAO {
 		}
 		return referrer;
 	}
+	
+	/**
+	 * Returns the list of all Contact instances from the database.
+	 * @return the list of all Contact instances from the database.
+	 */
+	
+	public ReferrerURL populateUrl(ReferrerURL referrer){
+
+		SqlSession session = sqlSessionFactory.openSession();
+		
+		try {
+			referrer = (ReferrerURL) session.selectOne("ReferrerURL.select",referrer);
+		} catch(PersistenceException ex){
+			ex.printStackTrace();
+		}finally {
+			session.close();
+		}
+		return referrer;
+	}
 
 	
 }

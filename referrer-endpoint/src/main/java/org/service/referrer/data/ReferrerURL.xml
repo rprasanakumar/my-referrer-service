@@ -12,9 +12,13 @@
     </resultMap>
 
 	 <insert id="insert" parameterType="ReferrerURL">
-	INSERT INTO REFERRERURL (url_id,url_domain) OUTPUT Inserted.url_id VALUES (#{id},#{domain})
-ON DUPLICATE KEY UPDATE `url_hit_count` = `url_hit_count` + 1;
+	INSERT INTO REFERRERURL (url_id,url_domain,url_hit_count) VALUES (#{id},#{domain},1)
+ON DUPLICATE KEY UPDATE url_hit_count = url_hit_count + 1;
 	</insert>
+	
+	   <select id="select" parameterType="ReferrerURL" resultMap="result">
+    	SELECT * FROM REFERRERURL WHERE url_id = #{id}
+  		</select>	
 
 </mapper>
 

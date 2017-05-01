@@ -1,13 +1,22 @@
 package org.service.referrer.model;
 
+import java.io.Serializable;
+
+import org.service.referrer.ErrorList;
 
 /*
  * @author 	Prasanna Kumar Rajendran
  * @version 1.0
  * @date 04/24/2017
  */
-public class ReferrerURL implements Comparable<ReferrerURL> {
+public class ReferrerURL implements Comparable<ReferrerURL>, Serializable {
 	
+	/**
+	 * IMPORTANT
+	 * Do not change this Version number unless there is a real need
+	 * 
+	 */
+	private static final long serialVersionUID = -6305455888154930616L;
 	private String domain;
 	private long id;
 	private Long hitCount;
@@ -15,14 +24,18 @@ public class ReferrerURL implements Comparable<ReferrerURL> {
 	public Long getHitCount() {
 		return hitCount;
 	}
-	public void setHitCount(long hitCount) {
+	public void setHitCount(Long hitCount) {
 		this.hitCount = hitCount;
 	}
+	
 	public String getDomain() {
 		return domain;
 	}
 	public void setDomain(String domain) {
-		this.domain = domain;
+		if(domain!=null && !domain.isEmpty() && domain.length()<256)
+			this.domain = domain;
+		else
+			throw new RuntimeException(ErrorList.ERROR_0003);
 	}
 	public long getId() {
 		return id;
@@ -33,9 +46,23 @@ public class ReferrerURL implements Comparable<ReferrerURL> {
 	
 
 	public int compareTo(ReferrerURL o) {
-		// TODO Auto-generated method stub
 		return this.getHitCount().compareTo(o.getHitCount());
 	}
+	
+
+	 @Override
+	    public boolean equals(Object o) {
+	        if ((o instanceof ReferrerURL) && (((ReferrerURL) o).getId() == this.getId())) {
+	            return true;
+	        } else {
+	            return false;
+	        }
+	    }
+	 
+	    @Override
+	    public int hashCode() {
+	        return (int) this.getId();
+	    }
 
 
 

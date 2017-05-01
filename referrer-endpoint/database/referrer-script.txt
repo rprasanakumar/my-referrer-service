@@ -1,0 +1,13 @@
+/********************************************************
+* This script creates the database named referrer_service
+*********************************************************/
+DROP DATABASE IF EXISTS referrer_service;
+CREATE DATABASE referrer_service;
+USE referrer_service;
+
+-- create the tables for the database
+CREATE TABLE REFERRERURL(
+  url_id             INT  	    PRIMARY KEY,
+  url_domain         VARCHAR(255)   NOT NULL,
+  url_hit_count      INT  	  DEFAULT 1
+);

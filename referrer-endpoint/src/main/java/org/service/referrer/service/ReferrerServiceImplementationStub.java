@@ -56,7 +56,7 @@ public class ReferrerServiceImplementationStub implements IReferrerService {
 		
 			if(key==0){
 				referrer.setId(id);
-				referrer.setHitCount(1);
+				referrer.setHitCount((long) 1);
 				DataStoreMap.insertDataURL(id, referrer);
 				
 			}

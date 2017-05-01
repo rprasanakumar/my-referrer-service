@@ -9,14 +9,14 @@
 		<typeAlias alias="ReferrerURL" type="org.service.referrer.model.ReferrerURL"/>
 	</typeAliases>
 	
-		<environments default="development">
+	<environments default="development">
 		<environment id="development">
 		  <transactionManager type="JDBC"/>
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver"/>
-				<property name="url" value="jdbc:mysql://localhost:3306/referrer_service"/>
-				<property name="username" value="root"/>
-				<property name="password" value="1234"/>
+				<property name="url" value="jdbc:mysql://dbinstace.cyz4orlwlxxn.us-east-1.rds.amazonaws.com:3306/referrer_service"/>
+				<property name="username" value="rprasanakumar"/>
+				<property name="password" value="Nov_1987"/>
 			</dataSource>
 	   </environment>
 	</environments>

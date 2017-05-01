@@ -7,6 +7,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
 
+import org.service.referrer.ErrorList;
 import org.service.referrer.model.ReferrerURL;
 import org.service.referrer.service.IReferrerService;
 import org.service.referrer.service.ReferrerServiceImplementation;
@@ -25,9 +26,9 @@ public class RequestHandler {
 			service = new ReferrerServiceImplementation(referrer);
 			return service.putDataURL();
 		} catch (URISyntaxException e) {
-			e.printStackTrace();
+			e.printStackTrace();	
 		}
-		return null;
+		return referrer;
 	}
 	
 	@GET
