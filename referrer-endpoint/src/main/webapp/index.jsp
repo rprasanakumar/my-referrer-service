@@ -11,12 +11,16 @@
     </title>
 	<script>
 	function urlPost(){
-		var url = "/referrer-endpoint/webapi/referrer/url";
+		var url = "/webapi/referrer/url";
 		var domain = document.getElementById("domain").value;
 		var client = new XMLHttpRequest();
 		if(domain==null || domain==""){
 			
 			alert("URL cannot be empty");
+			return;
+		}
+		else if(!(domain.includes("http") ||domain.includes("https"))){
+			alert("URL should contain http or https request format");
 			return;
 		}
 		domain = "{".concat("\"domain\"").concat(":\"").concat(domain).concat("\"}");
@@ -39,7 +43,7 @@
 	
 	
 	function topGet(){
-		var url = "/referrer-endpoint/webapi/referrer/top";
+		var url = "/webapi/referrer/top";
 		//var domain = document.getElementById("domain").value;
 		//domain = "{".concat("\"domain\"").concat(":\"").concat(domain).concat("\"}");
 		var client = new XMLHttpRequest();
