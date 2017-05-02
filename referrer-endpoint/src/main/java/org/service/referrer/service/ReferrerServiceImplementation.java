@@ -17,6 +17,12 @@ import org.service.referrer.model.TopReferrerUrl;
 import org.service.referrer.utilities.CacheSerializationUtility;
 
 import database.DataStoreMap;
+/**
+ * @author Prasanna Kumar Rajendran
+ * Core service implmention class
+ * with method putDataURL and getTopURL implemented
+ */
+
 
 public class ReferrerServiceImplementation implements IReferrerService {
 
@@ -30,7 +36,7 @@ public class ReferrerServiceImplementation implements IReferrerService {
 	public ReferrerServiceImplementation(){
 		
 	}
-
+// extracts the url's domain only
 	public void extractDomainUrl() throws URISyntaxException {
 		
 		URI uri ;
@@ -51,6 +57,7 @@ public class ReferrerServiceImplementation implements IReferrerService {
 		
 	}
 	
+	// Inserts the url domain, id and count into the data base
 	public ReferrerURL putDataURL(){
 		ReferrerDAO rfrDAO = new ReferrerDAO();
 		try{
@@ -64,6 +71,8 @@ public class ReferrerServiceImplementation implements IReferrerService {
 		}
 		return referrer;
 	}
+	
+	// Returns the Priority Queue as a list
 	public List<ReferrerURL> getTopURL() {
 		List<ReferrerURL> lst = new ArrayList<ReferrerURL>();
 		TopReferrerUrl urlObject = (TopReferrerUrl) CacheSerializationUtility.deserialize(SER_PATH);
@@ -75,6 +84,12 @@ public class ReferrerServiceImplementation implements IReferrerService {
 		return lst;
 	}
 	
+	/**
+	 * Cache the present topurls into as a serialized Min Heap
+	 *  1. when there is a incoming request to persist a new referrer URL, 
+	 *  2. checks its hit count with the top element in the min heap
+	 *  3  ignore the new url if the count is less than the top else replace new url with the top element in the Heap
+	 */
 	public void cacheTopUrl(){
 		TopReferrerUrl urlObject = (TopReferrerUrl) CacheSerializationUtility.deserialize(SER_PATH);
 		boolean isPresent =false;
@@ -115,22 +130,5 @@ public class ReferrerServiceImplementation implements IReferrerService {
 		
 	}
 	
-//	public List<ReferrerURL> getTopURL(){
-//		PriorityQueue<ReferrerURL> queue = new PriorityQueue<ReferrerURL>(3); 
-//		List<ReferrerURL> lst = new ArrayList<ReferrerURL>();
-//		for(long id: urlCollection.keySet()){
-//			if(queue.size()<3){
-//				queue.add(urlCollection.get(id));
-//			}
-//			else{
-//			if(urlCollection.get(id).getHitCount()>queue.peek().getHitCount()){
-//				queue.poll();
-//				queue.add(urlCollection.get(id));
-//			}
-//			}
-//		}
-//		lst.addAll(queue);
-//		return lst;
-//	}
 
 }

@@ -12,10 +12,24 @@ import org.service.referrer.model.ReferrerURL;
 import org.service.referrer.service.IReferrerService;
 import org.service.referrer.service.ReferrerServiceImplementation;
 
+/**
+ * @author Prasanna Kumar Rajendran
+ * this Class is the request handler for different request that hits the referrer service
+ */
+
+
+
 @Path("/referrer")
 public class RequestHandler {
 	IReferrerService service = null;
 	
+	
+	/**
+	 * 
+	 * @post request handler method with
+	 * @param ReferrerURL object
+	 *
+	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
@@ -31,6 +45,13 @@ public class RequestHandler {
 		return referrer;
 	}
 	
+	
+	/**
+	 * 
+	 * @get request handler method which
+	 * @returns ReferrerURL objects list 
+	 *
+	 */
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("/top")

@@ -2,7 +2,13 @@ package org.service.referrer.model;
 
 import java.io.Serializable;
 import java.util.PriorityQueue;
-
+/*
+ * @author 	Prasanna Kumar Rajendran
+ * @version 1.0
+ * @date 04/24/2017
+ * @serializable object which holds the
+ * @param PriorityQueue with top three trending ReferrerURL 
+ */
 public class TopReferrerUrl implements Serializable {
 
 	/**

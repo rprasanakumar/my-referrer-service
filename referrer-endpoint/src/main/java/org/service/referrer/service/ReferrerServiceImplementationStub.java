@@ -11,6 +11,15 @@ import org.service.referrer.model.ReferrerURL;
 
 import database.DataStoreMap;
 
+
+/*
+ * @author 	Prasanna Kumar Rajendran
+ * @version 1.0
+ * @date 04/24/2017
+ * STUB if there is NO DATA BASE
+ */
+
+
 public class ReferrerServiceImplementationStub implements IReferrerService {
 
 	ReferrerURL referrer =null;

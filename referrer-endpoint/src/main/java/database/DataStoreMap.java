@@ -3,7 +3,14 @@ package database;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.service.referrer.model.ReferrerURL;
-
+/**
+ * 
+ * @author Prasanna Kumar
+ * @version 0.0.1
+ * @since 04/19/2017
+ * This class is a Data Base mock Stub
+ *
+ */
 public class DataStoreMap {
 	
 	private static ConcurrentHashMap<Long, ReferrerURL> urlToIdMap = new ConcurrentHashMap<Long, ReferrerURL>();

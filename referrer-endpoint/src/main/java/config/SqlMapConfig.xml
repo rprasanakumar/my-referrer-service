@@ -16,7 +16,7 @@
 				<property name="driver" value="com.mysql.jdbc.Driver"/>
 				<property name="url" value="jdbc:mysql://dbinstace.cyz4orlwlxxn.us-east-1.rds.amazonaws.com:3306/referrer_service"/>
 				<property name="username" value="rprasanakumar"/>
-				<property name="password" value="******"/>
+				<property name="password" value="****"/>
 			</dataSource>
 	   </environment>
 	</environments>

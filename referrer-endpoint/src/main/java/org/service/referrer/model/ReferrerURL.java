@@ -8,6 +8,8 @@ import org.service.referrer.ErrorList;
  * @author 	Prasanna Kumar Rajendran
  * @version 1.0
  * @date 04/24/2017
+ * @serializable object which holds the url's 
+ * @param domain, id and hitcount
  */
 public class ReferrerURL implements Comparable<ReferrerURL>, Serializable {
 	

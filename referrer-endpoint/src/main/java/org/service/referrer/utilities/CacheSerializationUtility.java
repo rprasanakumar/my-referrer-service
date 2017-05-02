@@ -2,6 +2,15 @@ package org.service.referrer.utilities;
 
 import java.io.*;
 
+
+/**
+ * @author Prasanna Kumar Rajendran
+ * Utility class for serialization and deserialization
+ *
+ */
+
+
+
 public class CacheSerializationUtility {
 	
 	public static Object deserialize(String filePath)  {	
