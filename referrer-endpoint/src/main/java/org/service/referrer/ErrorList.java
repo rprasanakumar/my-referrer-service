@@ -3,13 +3,11 @@ package org.service.referrer;
 
 
 
-/**
+/** 
  * 
+ * This class holds the error lists. 
  * @author Prasanna Kumar
  * @version 0.0.1
- * @since 04/19/2017
- * This class is a static error list
- *
  */
 
 

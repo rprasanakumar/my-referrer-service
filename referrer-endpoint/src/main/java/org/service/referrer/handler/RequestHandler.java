@@ -7,16 +7,21 @@ import javax.ws.rs.*;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
 
-import org.service.referrer.ErrorList;
 import org.service.referrer.model.ReferrerURL;
 import org.service.referrer.service.IReferrerService;
 import org.service.referrer.service.ReferrerServiceImplementation;
 
-/**
- * @author Prasanna Kumar Rajendran
- * this Class is the request handler for different request that hits the referrer service
- */
+import com.mysql.fabric.Response;
 
+
+
+/** 
+ * this Class is the request handler for different request that hits the referrer service 
+ * actions  
+ * @author Prasanna Kumar
+ * @version 0.0.1
+ * @param  referrer object
+ */
 
 
 @Path("/referrer")
@@ -49,7 +54,7 @@ public class RequestHandler {
 	/**
 	 * 
 	 * @get request handler method which
-	 * @returns ReferrerURL objects list 
+	 * @returns ReferrerURL list objects
 	 *
 	 */
 	@GET

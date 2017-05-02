@@ -4,13 +4,14 @@ import java.io.Serializable;
 
 import org.service.referrer.ErrorList;
 
-/*
- * @author 	Prasanna Kumar Rajendran
- * @version 1.0
- * @date 04/24/2017
- * @serializable object which holds the url's 
- * @param domain, id and hitcount
+
+/** 
+ * this Class serializable plain old java object which holds the url's  
+ * domain, id and hitcount  
+ * @author Prasanna Kumar
+ * @version 0.0.1
  */
+
 public class ReferrerURL implements Comparable<ReferrerURL>, Serializable {
 	
 	/**

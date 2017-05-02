@@ -3,6 +3,7 @@ package org.service.referrer.service;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -17,16 +18,17 @@ import org.service.referrer.model.TopReferrerUrl;
 import org.service.referrer.utilities.CacheSerializationUtility;
 
 import database.DataStoreMap;
-/**
- * @author Prasanna Kumar Rajendran
- * Core service implmention class
- * with method putDataURL and getTopURL implemented
+
+
+/** 
+ * this Class service implementation class with method putDataURL and getTopURL implemented  
+
+ * @author Prasanna Kumar
+ * @version 0.0.1
  */
-
-
 public class ReferrerServiceImplementation implements IReferrerService {
 
-	final String SER_PATH = "/cache/topurl.ser"; 
+	final String SER_PATH = "/tmp/cache/topurl.ser"; 
 	ReferrerURL referrer =null;
 	private PriorityQueue<ReferrerURL> qeue;
 	public ReferrerServiceImplementation( ReferrerURL referrer){
@@ -76,11 +78,12 @@ public class ReferrerServiceImplementation implements IReferrerService {
 	public List<ReferrerURL> getTopURL() {
 		List<ReferrerURL> lst = new ArrayList<ReferrerURL>();
 		TopReferrerUrl urlObject = (TopReferrerUrl) CacheSerializationUtility.deserialize(SER_PATH);
-		if(urlObject!=null){
-			qeue = urlObject.getQueue();
-			lst.addAll(qeue);			
-		}
-		
+			if(urlObject!=null){
+				qeue = urlObject.getQueue();
+				lst.addAll(qeue);			
+			}
+		Collections.sort(lst);
+		Collections.reverse(lst);
 		return lst;
 	}
 	

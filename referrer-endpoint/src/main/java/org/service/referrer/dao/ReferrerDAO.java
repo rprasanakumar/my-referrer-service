@@ -9,14 +9,15 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import org.service.referrer.model.*;
 
-/**
- * 
+
+
+
+/** 
+ * This class is a Data access object layer, which interacts with the Data Base and manages different 
+ * actions  
  * @author Prasanna Kumar
  * @version 0.0.1
- * @since 04/19/2017
- * This class is a Data access object layer, which interacts with the Data Base and manages different 
- * actions 
- *
+ * @param  referrer object
  */
 
 

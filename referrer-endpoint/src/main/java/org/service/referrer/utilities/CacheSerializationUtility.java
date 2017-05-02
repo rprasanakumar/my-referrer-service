@@ -2,13 +2,12 @@ package org.service.referrer.utilities;
 
 import java.io.*;
 
+/** 
+ * this Class is a Utility class for serialization and deserialization  
 
-/**
- * @author Prasanna Kumar Rajendran
- * Utility class for serialization and deserialization
- *
+ * @author Prasanna Kumar
+ * @version 0.0.1
  */
-
 
 
 public class CacheSerializationUtility {
